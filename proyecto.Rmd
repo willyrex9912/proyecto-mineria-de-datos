@@ -66,3 +66,28 @@ names(datos_2024) <- normalizar_nombres(names(datos_2024))
 
 ```
 
+Eliminando columna "ZONA_CIUDAD" ya que unicamente se encuentra en los datos de 2021
+```{r}
+datos_2021 <- datos_2021[,-12]
+```
+
+Cambiando orden de columnas en datos 2018 para estandarizar orden
+```{r}
+datos_2018 <- datos_2018 %>% select(1:8, DEPTO_OCU, MUPIO_OCU, everything())
+```
+
+
+Uniendo todos los datos para obtener solo un dataframe
+```{r}
+df <- bind_rows(datos_2018, datos_2019, datos_2020, datos_2021, datos_2022, datos_2023, datos_2024)
+
+head(df)
+tail(df)
+```
+
+
+
+
+
+
+
