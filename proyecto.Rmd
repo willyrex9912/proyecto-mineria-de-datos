@@ -11,6 +11,7 @@ Instalando y cargando librerías necesarias
 
 #install.packages("readxl")
 library(readxl)
+library(dplyr)
 
 ```
 
@@ -35,6 +36,33 @@ data.frame(1:ncol(datos_2021), colnames(datos_2021))
 data.frame(1:ncol(datos_2022), colnames(datos_2022))
 data.frame(1:ncol(datos_2023), colnames(datos_2023))
 data.frame(1:ncol(datos_2024), colnames(datos_2024))
+
+```
+
+Estandarizando nombres de columnas
+```{r}
+library(stringr)
+normalizar_nombres <- function(nombres) {
+  nombres %>%
+    # Convertir a mayúsculas
+    toupper() %>%
+    # Eliminar tildes y caracteres especiales
+    iconv(from = "UTF-8", to = "ASCII//TRANSLIT") %>%
+    # Reemplazar espacios por guiones bajos
+    str_replace_all(" ", "_") %>%
+    # Eliminar múltiples guiones bajos consecutivos
+    str_replace_all("_+", "_") %>%
+    # Eliminar guiones bajos al inicio o final
+    str_remove_all("^_|_$")
+}
+
+names(datos_2018) <- normalizar_nombres(names(datos_2018))
+names(datos_2019) <- normalizar_nombres(names(datos_2019))
+names(datos_2020) <- normalizar_nombres(names(datos_2020))
+names(datos_2021) <- normalizar_nombres(names(datos_2021))
+names(datos_2022) <- normalizar_nombres(names(datos_2022))
+names(datos_2023) <- normalizar_nombres(names(datos_2023))
+names(datos_2024) <- normalizar_nombres(names(datos_2024))
 
 ```
 
