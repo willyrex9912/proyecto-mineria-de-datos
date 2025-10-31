@@ -1,18 +1,27 @@
 ---
 title: "Proyecto - Minería de datos - Willy Ardiano - 999017224"
 output: html_notebook
+github: https://github.com/willyrex9912/proyecto-mineria-de-datos.git
 ---
 
-This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+Análisis sobre los "Accidentes de tránsito" en Guatemala.
 
-Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
-
+Instalando y cargando librerías necesarias
 ```{r}
-plot(cars)
+
+#install.packages("readxl")
+library(readxl)
+
 ```
 
-Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+Cargando archivo con datos del año 2018
+```{r}
+datos_2018 <- read_excel("hechos-de-transito-ano-2018.xlsx")
+datos_2019 <- read_excel("hechos-de-transito-ano-2019.xlsx")
+datos_2020 <- read_excel("hechos-de-transito-ano-2020.xlsx")
+datos_2021 <- read_excel("hechos-de-transito-ano-2021.xlsx")
+datos_2022 <- read_excel("hechos-de-transito-ano-2022.xlsx")
+datos_2023 <- read_excel("hechos-de-transito-ano-2023.xlsx")
+datos_2024 <- read_excel("hechos-de-transito-ano-2024.xlsx")
+```
 
-When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
-
-The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
