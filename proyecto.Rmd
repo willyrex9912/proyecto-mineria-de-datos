@@ -16,12 +16,25 @@ library(readxl)
 
 Cargando archivo con datos del año 2018
 ```{r}
-datos_2018 <- read_excel("hechos-de-transito-ano-2018.xlsx")
-datos_2019 <- read_excel("hechos-de-transito-ano-2019.xlsx")
-datos_2020 <- read_excel("hechos-de-transito-ano-2020.xlsx")
-datos_2021 <- read_excel("hechos-de-transito-ano-2021.xlsx")
-datos_2022 <- read_excel("hechos-de-transito-ano-2022.xlsx")
-datos_2023 <- read_excel("hechos-de-transito-ano-2023.xlsx")
-datos_2024 <- read_excel("hechos-de-transito-ano-2024.xlsx")
+datos_2018 <- read_excel("data/hechos-de-transito-ano-2018.xlsx")
+datos_2019 <- read_excel("data/hechos-de-transito-ano-2019.xlsx")
+datos_2020 <- read_excel("data/hechos-de-transito-ano-2020.xlsx")
+datos_2021 <- read_excel("data/hechos-de-transito-ano-2021.xlsx")
+datos_2022 <- read_excel("data/hechos-de-transito-ano-2022.xlsx")
+datos_2023 <- read_excel("data/hechos-de-transito-ano-2023.xlsx")
+datos_2024 <- read_excel("data/hechos-de-transito-ano-2024.xlsx")
+```
+
+Verificando estructuras
+```{r}
+
+data.frame(1:ncol(datos_2018), colnames(datos_2018))
+data.frame(1:ncol(datos_2019), colnames(datos_2019))
+data.frame(1:ncol(datos_2020), colnames(datos_2020))
+data.frame(1:ncol(datos_2021), colnames(datos_2021))
+data.frame(1:ncol(datos_2022), colnames(datos_2022))
+data.frame(1:ncol(datos_2023), colnames(datos_2023))
+data.frame(1:ncol(datos_2024), colnames(datos_2024))
+
 ```
 
